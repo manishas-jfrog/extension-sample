@@ -1,5 +1,5 @@
 resources:
-  - name: ansible_repo
+  - name: ans_repo
     type: sourceControl/GitRepo
     syntaxVersion: 1.0.0
     configuration:
@@ -9,7 +9,7 @@ resources:
       gitRepoName: extension_usage_samples
 
 pipelines:
-  - name: ansible_pipeline
+  - name: ans_pipeline
     steps:
       - name: ansible_step_v1
         type: ansible/ansiblePlaybook
