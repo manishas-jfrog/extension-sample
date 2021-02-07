@@ -18,7 +18,7 @@ pipelines:
           resourceName: ansible_repo
           fileName: ./ansible.yml
           inputResources:
-            - name: ansible_repo
+            - name: ans_repo
         execution:
           onStart:
             - echo "Starting execution of ansible playbook..."
@@ -31,7 +31,7 @@ pipelines:
         configuration:
           fileName: ./ansible.yml
           inputResources:
-            - name: ansible_repo
+            - name: ans_repo
               trigger: false
           inputSteps:
             - name: ansible_step_v1
