@@ -15,7 +15,7 @@ pipelines:
         type: ansible/ansiblePlaybook
         syntaxVersion: 1.0.0
         configuration:
-          resourceName: ansible_repo
+          resourceName: ans_repo
           fileName: ./ansible.yml
           inputResources:
             - name: ans_repo
