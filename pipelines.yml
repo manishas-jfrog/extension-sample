@@ -4,9 +4,9 @@ resources:
     syntaxVersion: 1.0.0
     configuration:
       GitHub : manishas_jfrog
-      gitUrl: https://github.com/manishas-jfrog/extension_usage_samples.git
+      gitUrl: https://github.com/manishas-jfrog/extension_sample.git
       gitBranch: main
-      gitRepoName: extension_usage_samples
+      gitRepoName: extension_sample
 
 pipelines:
   - name: ans_pipeline
