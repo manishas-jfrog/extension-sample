@@ -1,0 +1,37 @@
+resources:
+  - name: ansible_repo
+    type: sourceControl/GitRepo
+    syntaxVersion: 1.0.0
+    configuration:
+      GitHub : manishas_jfrog
+      gitUrl: https://github.com/manishas-jfrog/extension_usage_samples.git
+      gitBranch: main
+      gitRepoName: extension_usage_samples
+
+pipelines:
+  - name: ansible_pipeline
+    steps:
+      - name: ansible_step_v1
+        type: ansible/ansiblePlaybook
+        syntaxVersion: 1.0.0
+        configuration:
+          resourceName: ansible_repo
+          fileName: ./ansiblePlaybook/ansible.yml
+          inputResources:
+            - name: ansible_repo
+        execution:
+          onStart:
+            - echo "Starting execution of ansible playbook..."
+          onComplete:
+            - echo "Completed execution of ansible playbook"
+
+      - name: ansible_step_latest
+        type: ansible/ansiblePlaybook
+        syntaxVersion: latest
+        configuration:
+          fileName: ./ansiblePlaybook/ansible.yml
+          inputResources:
+            - name: ansible_repo
+              trigger: false
+          inputSteps:
+            - name: ansible_step_v1
