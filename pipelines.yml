@@ -16,7 +16,7 @@ pipelines:
         syntaxVersion: 1.0.0
         configuration:
           resourceName: ansible_repo
-          fileName: ./ansiblePlaybook/ansible.yml
+          fileName: ./ansible.yml
           inputResources:
             - name: ansible_repo
         execution:
@@ -29,7 +29,7 @@ pipelines:
         type: ansible/ansiblePlaybook
         syntaxVersion: latest
         configuration:
-          fileName: ./ansiblePlaybook/ansible.yml
+          fileName: ./ansible.yml
           inputResources:
             - name: ansible_repo
               trigger: false
