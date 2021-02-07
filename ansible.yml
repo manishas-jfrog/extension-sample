@@ -1,0 +1,11 @@
+---
+  - name: "Ansible 101 demo"
+    hosts: localhost
+    connection: local
+    tasks:
+
+    - name: "Execute Hello World"
+      shell: "echo hello world"
+      register: "output"
+
+    - debug: var=output.stdout_lines
